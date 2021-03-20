@@ -1,8 +1,8 @@
 package keeper
 
 import (
+	"github.com/benwolfaardt/lending-master/x/lending/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/spoto/lending/x/lending/types"
 )
 
 func RegisterInvariants(ir sdk.InvariantRegistry, k Keeper) {
@@ -19,8 +19,8 @@ func DebtsArePositive(keeper Keeper) sdk.Invariant {
 		}
 
 		return sdk.FormatInvariant(types.ModuleName,
-			"negative debt",
-			"A debt has a negative amount"),
+				"negative debt",
+				"A debt has a negative amount"),
 			negative
 	}
 }
@@ -34,8 +34,8 @@ func DebtsAreNotReflexive(keeper Keeper) sdk.Invariant {
 		}
 
 		return sdk.FormatInvariant(types.ModuleName,
-			"reflexive debt",
-			"The creditor of a debt coincides with its debtor"),
+				"reflexive debt",
+				"The creditor of a debt coincides with its debtor"),
 			reflexive
 	}
 }

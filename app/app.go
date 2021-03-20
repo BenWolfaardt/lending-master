@@ -2,9 +2,10 @@ package app
 
 import (
 	"encoding/json"
-	"github.com/spoto/lending/x/lending"
 	"io"
 	"os"
+
+	"github.com/benwolfaardt/lending-master/x/lending"
 
 	abci "github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/libs/log"

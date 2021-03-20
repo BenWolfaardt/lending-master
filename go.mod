@@ -1,4 +1,4 @@
-module github.com/spoto/lending
+module github.com/benwolfaardt/lending-master
 
 go 1.13
 

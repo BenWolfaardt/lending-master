@@ -2,13 +2,14 @@ package rest
 
 import (
 	"fmt"
+	"net/http"
+
+	"github.com/benwolfaardt/lending-master/x/lending/types"
 	"github.com/cosmos/cosmos-sdk/client/context"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/rest"
 	"github.com/cosmos/cosmos-sdk/x/auth/client/utils"
 	"github.com/gorilla/mux"
-	"github.com/spoto/lending/x/lending/types"
-	"net/http"
 )
 
 func registerTxRoutes(cliCtx context.CLIContext, r *mux.Router) {
@@ -16,9 +17,9 @@ func registerTxRoutes(cliCtx context.CLIContext, r *mux.Router) {
 }
 
 type createDebtRequest struct {
-	BaseReq rest.BaseReq `json:"base_req"`
-	ID     string         `json:"ID"`
-	Debtor sdk.AccAddress `json:"debtor"`
+	BaseReq  rest.BaseReq   `json:"base_req"`
+	ID       string         `json:"ID"`
+	Debtor   sdk.AccAddress `json:"debtor"`
 	Amount   sdk.Coin       `json:"amount"`
 	Creditor sdk.AccAddress `json:"creditor"`
 }
@@ -40,7 +41,7 @@ func createDebtFn(cliCtx context.CLIContext) http.HandlerFunc {
 		}
 
 		// create the message
-		msg := types.MsgCreateDebt {
+		msg := types.MsgCreateDebt{
 			ID:       req.ID,
 			Amount:   req.Amount,
 			Creditor: req.Creditor,

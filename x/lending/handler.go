@@ -2,9 +2,10 @@ package lending
 
 import (
 	"fmt"
+
+	"github.com/benwolfaardt/lending-master/x/lending/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkErr "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/spoto/lending/x/lending/types"
 )
 
 func NewHandler(keeper Keeper) sdk.Handler {

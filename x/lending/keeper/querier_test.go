@@ -1,10 +1,11 @@
 package keeper
 
 import (
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/spoto/lending/x/lending/types"
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/benwolfaardt/lending-master/x/lending/types"
+	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/stretchr/testify/require"
 )
 
 func Test_queryGetAllDebts(t *testing.T) {

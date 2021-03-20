@@ -2,14 +2,15 @@ package rest
 
 import (
 	"fmt"
-	sdk "github.com/cosmos/cosmos-sdk/types"
 	"net/http"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
 
 	"github.com/gorilla/mux"
 
+	"github.com/benwolfaardt/lending-master/x/lending/types"
 	"github.com/cosmos/cosmos-sdk/client/context"
 	"github.com/cosmos/cosmos-sdk/types/rest"
-	"github.com/spoto/lending/x/lending/types"
 )
 
 func registerQueryRoutes(cliCtx context.CLIContext, r *mux.Router) {

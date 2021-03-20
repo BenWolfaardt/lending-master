@@ -2,10 +2,11 @@ package keeper
 
 import (
 	"fmt"
+
+	"github.com/benwolfaardt/lending-master/x/lending/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/bank"
-	"github.com/spoto/lending/x/lending/types"
 )
 
 // Keeper of the lending platform's store
@@ -15,9 +16,9 @@ type Keeper struct {
 	bankKeeper bank.Keeper
 
 	// we add an extra keeper to keep all debts created so far
-	storeKey   sdk.StoreKey
+	storeKey sdk.StoreKey
 
-	cdc        *codec.Codec
+	cdc *codec.Codec
 }
 
 func NewKeeper(storeKey sdk.StoreKey, bankKeeper bank.Keeper, cdc *codec.Codec) Keeper {

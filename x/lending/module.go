@@ -2,6 +2,7 @@ package lending
 
 import (
 	"encoding/json"
+
 	"github.com/cosmos/cosmos-sdk/x/bank"
 
 	"github.com/gorilla/mux"
@@ -9,20 +10,20 @@ import (
 
 	abci "github.com/tendermint/tendermint/abci/types"
 
+	"github.com/benwolfaardt/lending-master/x/lending/client/cli"
+	"github.com/benwolfaardt/lending-master/x/lending/client/rest"
+	"github.com/benwolfaardt/lending-master/x/lending/keeper"
+	"github.com/benwolfaardt/lending-master/x/lending/types" // added
 	"github.com/cosmos/cosmos-sdk/client/context"
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/spoto/lending/x/lending/client/cli"
-	"github.com/spoto/lending/x/lending/client/rest"
-	"github.com/spoto/lending/x/lending/keeper"
-	"github.com/spoto/lending/x/lending/types" // added
 )
 
 // Type check to ensure the interface is properly implemented
 var (
-	_ module.AppModule           = AppModule{}
-	_ module.AppModuleBasic      = AppModuleBasic{}
+	_ module.AppModule      = AppModule{}
+	_ module.AppModuleBasic = AppModuleBasic{}
 )
 
 // AppModuleBasic defines the basic application module used by the lending module.
@@ -74,16 +75,16 @@ func (AppModuleBasic) GetQueryCmd(cdc *codec.Codec) *cobra.Command {
 // AppModule implements an application module for the lending module.
 type AppModule struct {
 	AppModuleBasic
-	keeper        keeper.Keeper
-	bankKeeper    bank.Keeper // added
+	keeper     keeper.Keeper
+	bankKeeper bank.Keeper // added
 }
 
 // NewAppModule creates a new AppModule object
 func NewAppModule(k keeper.Keeper, bankKeeper bank.Keeper) AppModule { // added parameter
 	return AppModule{
-		AppModuleBasic:      AppModuleBasic{},
-		keeper:              k,
-		bankKeeper:          bankKeeper, // added
+		AppModuleBasic: AppModuleBasic{},
+		keeper:         k,
+		bankKeeper:     bankKeeper, // added
 	}
 }
 

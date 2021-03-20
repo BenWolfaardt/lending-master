@@ -1,8 +1,8 @@
 package lending
 
 import (
+	"github.com/benwolfaardt/lending-master/x/lending/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/spoto/lending/x/lending/types"
 )
 
 // InitGenesis initialize default parameters

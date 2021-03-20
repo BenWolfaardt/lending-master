@@ -1,8 +1,8 @@
 package lending
 
 import (
-	"github.com/spoto/lending/x/lending/keeper"
-	"github.com/spoto/lending/x/lending/types"
+	"github.com/benwolfaardt/lending-master/x/lending/keeper"
+	"github.com/benwolfaardt/lending-master/x/lending/types"
 )
 
 const (

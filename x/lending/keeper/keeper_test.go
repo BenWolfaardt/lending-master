@@ -1,10 +1,11 @@
 package keeper
 
 import (
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/spoto/lending/x/lending/types"
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/benwolfaardt/lending-master/x/lending/types"
+	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/stretchr/testify/require"
 )
 
 func TestKeeper_CreateDebtWithAvailableID(t *testing.T) {
@@ -51,7 +52,7 @@ func TestKeeper_CreateDebtWithUnavailableID(t *testing.T) {
 	require.NoError(t, err)
 
 	debt2 := types.Debt{
-		ID:       "A1",  // same ID as before!
+		ID:       "A1", // same ID as before!
 		Debtor:   creditor,
 		Amount:   sdk.NewCoin("foo", sdk.NewInt(10000)),
 		Creditor: debtor,

@@ -2,10 +2,11 @@ package keeper
 
 import (
 	"fmt"
+
+	"github.com/benwolfaardt/lending-master/x/lending/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkErr "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/spoto/lending/x/lending/types"
 	abci "github.com/tendermint/tendermint/abci/types"
 )
 
